@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: configsvr
+spec:
+  ports:
+    - port: 27017
+  selector:
+    role: configsvr
+  clusterIP: None
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shardsvr
+spec:
+  ports:
+    - port: 27017
+  selector:
+    role: shardsvr
+  clusterIP: None
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongos
+spec:
+  ports:
+    - port: 27017
+  selector:
+    role: mongos
