@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: configsvr
+spec:
+  serviceName: "configsvr"
+  replicas: 3
+  selector:
+    matchLabels:
+      role: configsvr
+  template:
+    metadata:
+      labels:
+        role: configsvr
+    spec:
+      containers:
+        - name: mongod
+          image: mongo:4.4
+          command: ["mongod", "--configsvr", "--replSet", "configReplSet", "--bind_ip_all"]
+          ports:
+            - containerPort: 27017
