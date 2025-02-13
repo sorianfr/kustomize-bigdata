@@ -1,6 +1,6 @@
 kustomize-bigdata
 ```
-git clone https://github.com/sorianfr/kustomize-course.git
+git clone https://github.com/sorianfr/kustomize-bigdata.git
 ```
 Download the Kustomize binary:
 ```
