@@ -1,0 +1,8 @@
+resources:
+  - ../../base
+
+components:
+  - ../../components/mongo
+
+patches:
+  - path: patch.yaml

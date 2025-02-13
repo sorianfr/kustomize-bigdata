@@ -2,6 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1alpha1
 kind: Component
 
 resources:
-  - spark-master-deployment.yaml
-  - spark-worker-deployment.yaml
+  - kafka-deployment.yaml
+  - zookeeker-deployment.yaml
   - services.yaml
