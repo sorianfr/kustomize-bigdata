@@ -21,7 +21,16 @@ spec:
             [
               "/opt/bitnami/spark/bin/spark-class",
               "org.apache.spark.deploy.worker.Worker",
-              "spark://spark-master:7077"
+              "$(SPARK_MASTER_URL)"
             ]
           ports:
             - containerPort: 8081
+          env:
+            - name: SPARK_WORKER_CORES
+              value: "2"  # Adjust based on available CPU
+            - name: SPARK_WORKER_MEMORY
+              value: "2g"  # Adjust based on available RAM
+            - name: SPARK_NO_DAEMONIZE
+              value: "true"
+            - name: SPARK_MASTER_URL
+              value: "spark://spark-master:7077"
